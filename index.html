@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digumarthi Srilikhitha | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset and General Styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+    }
+
+      .container {
+  display: flex;
+}
+
+/* Sidebar Styles - Adjusted */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(45deg, #212529, #ff5252);
+  color: #fff;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative; /* No longer fixed */
+  flex-shrink: 0; /* Prevents sidebar from shrinking */
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ff5252;
+  padding-bottom: 10px;
+  color: #000; /* Menu title in black */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 12px 0;
+}
+
+.sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 10px 15px;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+.sidebar ul li a:hover,
+    .sidebar ul li a.active {
+      background: #ff5252;
+      color: #fff;
+    }
+
+
+/* Main Content Styles */
+.content {
+  flex-grow: 1;
+  padding: 40px 30px;
+}
+
+/* Page Heading */
+h1 {
+  font-size: 2.2rem;
+  color: #d32f2f;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+
+  /* Main Content Styles */
+  .home {
+    display: flex;
+    flex: 1;
+    padding: 50px;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    gap: 30px; /* Add spacing between intro and profile image */
+    background-color: #f0f4ff;
+  }
+
+  .intro {
+    flex: 2; /* Adjust to take more space compared to the image */
+    max-width: 600px; /* Restrict max width for better readability */
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 10px;
+  }
+
+  .intro h2 {
+    font-size: 1.8rem;
+    color: #ff5252;
+    margin-bottom: 20px;
+  }
+
+  .intro p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .hire-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #ff5252;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .hire-btn:hover {
+    background: #d43f3f;
+  }
+
+  .profile-image {
+    flex: 1; /* Make the image container take less space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-image img {
+    width: 250px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add a slight border radius for a better look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for emphasis */
+  }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="index.html" class="active"><i class="icon-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="icon-user"></i> About</a></li>
+        <li><a href="certifications.html"><i class="icon-certificate"></i> Certifications</a></li>
+        <li><a href="contact.html"><i class="icon-contact"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="home">
+      <div class="intro">
+        <h1>Hello, I'm <span class="highlight">Digumarthi Srilikhitha</span></h1>
+        <h2>An <span class="highlight">Aspiring Machine Learning Developer</span></h2>
+        <p>
+          I am a B.Tech final-year student specializing in Artificial Intelligence and Machine Learning. I have strong skills in Python (NumPy, Pandas), Java SE, C, Machine Learning, and web development. I am eager to learn, adapt, and contribute to impactful projects and collaborative teams.
+        </p>
+        <a href="contact.html" class="hire-btn">Hire Me</a>
+      </div>
+      <div class="profile-image">
+        <img src="profile.jpg" alt="Profile Picture">
+      </div>
+    </section>
+  </div>
+</body>
+</html>

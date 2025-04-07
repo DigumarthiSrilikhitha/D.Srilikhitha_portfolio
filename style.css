@@ -1,0 +1,127 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.container {
+  display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #f7f7ff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  color: #ff4b4b;
+}
+
+.icon-home, .icon-user, .icon-certificate, .icon-portfolio, .icon-contact {
+  margin-right: 10px;
+}
+
+/* Main Content Styling */
+.home {
+  display: flex;
+  flex: 1;
+  padding: 50px;
+  align-items: center;
+  background-color: #f0f4ff;
+}
+
+.intro {
+  flex: 1;
+}
+
+.intro h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.intro .highlight {
+  color: #ff4b4b;
+  font-weight: bold;
+}
+
+.intro h2 {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 16px;
+  color: #555;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.hire-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff4b4b;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hire-btn:hover {
+  background-color: #e03d3d;
+}
+
+/* Profile Image Styling */
+.profile-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

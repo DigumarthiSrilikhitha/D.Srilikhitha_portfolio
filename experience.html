@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience | Digumarthi Srilikhitha</title>
+  <link rel="stylesheet" href="css/styleexperience.css" />
+  <style>
+      * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      min-height: 100vh;
+    }
+    .container {
+  display: flex;
+}
+
+/* Sidebar Styles - Adjusted */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(45deg, #212529, #ff5252);
+  color: #fff;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative; /* No longer fixed */
+  flex-shrink: 0; /* Prevents sidebar from shrinking */
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ff5252;
+  padding-bottom: 10px;
+  color: #000; /* Menu title in black */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 12px 0;
+}
+
+.sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 10px 15px;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+.sidebar ul li a:hover,
+    .sidebar ul li a.active {
+      background: #ff5252;
+      color: #fff;
+    }
+
+
+/* Main Content Styles */
+.content {
+  flex-grow: 1;
+  padding: 40px 30px;
+}
+
+/* Page Heading */
+h1 {
+  font-size: 2.2rem;
+  color: #d32f2f;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Skills Section */
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Each Skill Category Card */
+.skill-category {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.skill-category h2 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.skill-category ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.skill-category ul li {
+  color: #555;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #212529;
+      border-bottom: 3px solid #ff5252;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+
+    /* Experience Section */
+    .experience-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .experience-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      flex: 1 1 calc(50% - 20px);
+      min-width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .experience-card h2 {
+      color: #333;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .experience-card p {
+      color: #555;
+      font-size: 0.95rem;
+      margin: 4px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .experience-section {
+        flex-direction: column;
+      }
+
+      .experience-card {
+        flex: 1 1 100%;
+      }
+
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html" class="active">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="content">
+      <h1>Experience</h1>
+      <div class="experience-section">
+        <div class="experience-card">
+          <h2>Smart Factory Automation using IoT</h2>
+          <p><strong>Organization:</strong> Siemens, NIT Warangal</p>
+          <p>Internship on IoT tools, smart factory concepts, and automation in real-time manufacturing.</p>
+        </div>
+
+        <div class="experience-card">
+          <h2>Web Development Intern</h2>
+          <p><strong>Organization:</strong> VaultofCodes</p>
+          <p>Created a personal portfolio, a to-do list app, and worked with HTML, CSS, and JavaScript.</p>
+        </div>
+
+        <div class="experience-card">
+          <h2>Python Developer Intern</h2>
+          <p><strong>Organization:</strong> CodersCave</p>
+          <p>Built projects like an Expense Sharing App and a Clock Web App using Python and Flask.</p>
+        </div>
+
+        <div class="experience-card">
+          <h2>Data Science Intern</h2>
+          <p><strong>Organization:</strong> Bharat Intern</p>
+          <p>Worked on predictive modeling with Titanic and Stock Market datasets using pandas and scikit-learn.</p>
+        </div>
+
+        <div class="experience-card">
+          <h2>Cyber Security Intern</h2>
+          <p><strong>Organization:</strong> Cisco</p>
+          <p>Explored network security tools, ethical hacking basics, and cyber threat mitigation strategies.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

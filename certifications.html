@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certifications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, #ffe6e6, #ffffff);
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            color: #b71c1c;
+            margin-bottom: 30px;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: #fff0f0;
+            border-left: 6px solid #d32f2f;
+            padding: 15px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            box-shadow: 0 4px 8px rgba(179, 57, 57, 0.2);
+        }
+
+        .cert-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 18px rgba(179, 57, 57, 0.3);
+            background-color: #ffe5e5;
+        }
+
+        .cert-card i {
+            color: #d32f2f;
+            font-size: 1.6rem;
+            margin-top: 4px;
+        }
+
+        .cert-card a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .cert-card a:hover {
+            text-decoration: underline;
+            color: #b71c1c;
+        }
+
+        .btn-home {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-home a {
+            background-color: #d32f2f;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-home a:hover {
+            background-color: #b71c1c;
+        }
+
+        @media (max-width: 500px) {
+            .cert-card {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-certificate"></i> My Certifications</h1>
+        </header>
+        <main>
+            <div class="certification-grid" id="certGrid">
+                <!-- Certification cards will be generated here -->
+            </div>
+        </main>
+
+        <div class="btn-home">
+            <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        const certifications = [
+            "HTML5, CSS, JS, Node.js, React.js – Infosys Spring Board (Sep, 2022)",
+            "Python – GUVI (Aug, 2023)",
+            "Machine Learning using Python – Infosys Spring Board (Nov, 2023)",
+            "Azure Administrator Associate – Microsoft (April, 2023)",
+            "Joy of Computing Using Python – NPTEL (Oct, 2022)",
+            "Cyber Security – Capgemini (March, 2024)",
+            "Introduction to Generative AI – Google Cloud (April, 2024)",
+            "Introduction to Cyber Security – Cisco (Aug, 2024)",
+            "Introduction to MongoDB – MongoDB (Aug, 2024)",
+            "Introduction to Generative AI Learning Path – Google Cloud (Sep, 2024)",
+            "Java Full Stack Certification – Wipro TalentNext (May-Sep, 2024)",
+            "AI Associate – Salesforce (Nov, 2024)"
+        ];
+
+        const certGrid = document.getElementById("certGrid");
+        const profileLink = "#";
+
+        certifications.forEach(cert => {
+            certGrid.innerHTML += `
+                <div class="cert-card">
+                    <i class="fas fa-award"></i>
+                    <a href="${profileLink}" target="_blank">${cert}</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
