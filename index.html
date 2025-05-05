@@ -1,207 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digumarthi Srilikhitha | Portfolio</title>
-  <meta name="description" content="Portfolio of Digumarthi Srilikhitha, aspiring Machine Learning Developer with expertise in Python, AI, and Web Development.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Srilikhitha Portfolio</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f9;
-    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .highlight {
-      color: #ff5252;
-      font-weight: bold;
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4fa;
+  color: #333;
+}
 
-    .container {
-      display: flex;
-      flex-direction: row;
-    }
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
 
-    .sidebar {
-      width: 260px;
-      background: linear-gradient(45deg, #212529, #ff5252);
-      color: #fff;
-      padding: 20px;
-      height: 100vh;
-      box-sizing: border-box;
-      flex-shrink: 0;
-    }
+.sidebar {
+  background: linear-gradient(to bottom, #e74c3c, #c0392b);
+  color: white;
+  padding: 20px;
+  width: 200px;
+}
 
-    .sidebar h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 30px;
-      border-bottom: 2px solid #ff5252;
-      padding-bottom: 10px;
-      color: #000;
-    }
+.sidebar h2 {
+  margin-bottom: 20px;
+}
 
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-    .sidebar ul li {
-      margin: 12px 0;
-    }
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
 
-    .sidebar ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1rem;
-      padding: 10px 15px;
-      display: block;
-      border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
-    }
+.home {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .sidebar ul li a:hover,
-    .sidebar ul li a.active {
-      background: #ff5252;
-      color: #fff;
-    }
+.intro {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
 
-    .content {
-      flex-grow: 1;
-      padding: 40px 30px;
-    }
+.intro-content {
+  max-width: 500px;
+}
 
-    .home {
-      display: flex;
-      flex: 1;
-      padding: 50px;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      background-color: #f0f4ff;
-      flex-wrap: wrap;
-    }
+.name {
+  color: #e74c3c;
+}
 
-    .intro {
-      flex: 2;
-      max-width: 600px;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+.btn {
+  margin-top: 20px;
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-    .intro h1 {
-      font-size: 2.5rem;
-      color: #343a40;
-      margin-bottom: 10px;
-    }
+.profile-img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-    .intro h2 {
-      font-size: 1.8rem;
-      color: #ff5252;
-      margin-bottom: 20px;
-    }
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 
-    .intro p {
-      font-size: 1rem;
-      color: #6c757d;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
 
-    .hire-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      font-size: 1rem;
-      color: #fff;
-      background: #ff5252;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
+  .sidebar ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
 
-    .hire-btn:hover {
-      background: #d43f3f;
-    }
+  .home {
+    padding: 20px;
+  }
 
-    .profile-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .profile-image img {
-      width: 250px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+  .intro-content {
+    width: 100%;
+  }
 
-    /* ✅ Responsive Design */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
+  .profile-img {
+    width: 150px;
+  }
+}
 
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 15px;
-      }
-
-      .home {
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      .intro, .profile-image {
-        width: 100%;
-        text-align: center;
-      }
-
-      .intro h1, .intro h2 {
-        font-size: 1.8rem;
-      }
-
-      .profile-image img {
-        width: 180px;
-        margin-top: 20px;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar -->
     <nav class="sidebar">
       <h2>Menu</h2>
       <ul>
-        <li><a href="index.html" class="active"><i class="icon-home"></i> Home</a></li>
-        <li><a href="about.html"><i class="icon-user"></i> About</a></li>
-        <li><a href="certifications.html"><i class="icon-certificate"></i> Certifications</a></li>
-        <li><a href="contact.html"><i class="icon-contact"></i> Contact</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Certifications</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- Main Content -->
     <section class="home">
       <div class="intro">
-        <h1>Hello, I'm <span class="highlight">Digumarthi Srilikhitha</span></h1>
-        <h2>An <span class="highlight">Aspiring Machine Learning Developer</span></h2>
-        <p>
-          I am a B.Tech final-year student specializing in Artificial Intelligence and Machine Learning. I have strong skills in Python (NumPy, Pandas), Java SE, C, Machine Learning, and web development. I am eager to learn, adapt, and contribute to impactful projects and collaborative teams.
-        </p>
-        <a href="contact.html" class="hire-btn">Hire Me</a>
-      </div>
-      <div class="profile-image">
-        <img src="profile.jpg" alt="Portrait of Digumarthi Srilikhitha">
+        <div class="intro-content">
+          <h1>Hello, I'm <span class="name">Digumarthi Srilikhitha</span></h1>
+          <h2>An Aspiring Machine Learning Developer</h2>
+          <p>
+            I am a B.Tech final-year student specializing in Artificial Intelligence and Machine Learning.
+            I have strong skills in Python (NumPy, Pandas), Java SE, C, Machine Learning, and web development.
+            I am eager to learn, adapt, and contribute to impactful projects and collaborative teams.
+          </p>
+          <button class="btn">Hire Me</button>
+        </div>
+        <img src="profile.jpg" alt="Srilikhitha" class="profile-img"/>
       </div>
     </section>
   </div>
