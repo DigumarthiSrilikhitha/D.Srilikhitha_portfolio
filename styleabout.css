@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0 ;
+  background-color: #f0f0f0;
 }
 
 /* Container Flex Layout */
@@ -29,8 +29,8 @@ body {
   font-size: 1.8rem;
   margin-bottom: 30px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #f0f0f0;
-  color: #fff;
+  border-bottom: 2px solid #fff;
+  color: #000;
 }
 
 /* Sidebar Menu */
@@ -45,7 +45,7 @@ body {
 }
 
 .sidebar ul li a {
-      color: #000;
+      color: #fff;
       text-decoration: none;
       font-size: 1.1rem;
       padding: 10px 15px;
@@ -57,7 +57,7 @@ body {
 .sidebar ul li a:hover,
     .sidebar ul li a.active {
       background: #ff5252;
-      color: #f0f0f0;
+      color: #fff;
     }
 
 
@@ -75,7 +75,7 @@ body {
 /* Headings */
 .content h1 {
   font-size: 2em;
-  color: #d32f2f;
+  color: #000;
   margin-bottom: 20px;
   font-weight: 600;
 }
