@@ -148,6 +148,64 @@ h1 {
     border-radius: 10px; /* Add a slight border radius for a better look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for emphasis */
   }
+  @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar h2 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar ul li a {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .home {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .intro {
+    max-width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .profile-image img {
+    width: 180px;
+  }
+
+  h1, .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 1.3rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+  }
+
+  .hire-btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+}
 
   </style>
 </head>
