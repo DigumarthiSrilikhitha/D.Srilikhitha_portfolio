@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digumarthi Srilikhitha | Portfolio</title>
+  <meta name="description" content="Portfolio of Digumarthi Srilikhitha, aspiring Machine Learning Developer with expertise in Python, AI, and Web Development.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
-    /* Reset and General Styles */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
       background-color: #f4f4f9;
     }
 
-    .container {
-      display: flex;
+    .highlight {
+      color: #ff5252;
+      font-weight: bold;
     }
 
-    /* Sidebar Styles */
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
     .sidebar {
       width: 260px;
       background: linear-gradient(45deg, #212529, #ff5252);
@@ -62,7 +69,6 @@
       color: #fff;
     }
 
-    /* Main Content */
     .content {
       flex-grow: 1;
       padding: 40px 30px;
@@ -76,6 +82,7 @@
       justify-content: center;
       gap: 30px;
       background-color: #f0f4ff;
+      flex-wrap: wrap;
     }
 
     .intro {
@@ -136,7 +143,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Responsive Design */
+    /* ✅ Responsive Design */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -146,16 +153,7 @@
         width: 100%;
         height: auto;
         position: relative;
-      }
-
-      .sidebar h2 {
-        font-size: 1.5rem;
-      }
-
-      .sidebar ul li a {
-        font-size: 1rem;
-        padding: 10px;
-        text-align: center;
+        padding: 15px;
       }
 
       .home {
@@ -163,36 +161,18 @@
         padding: 20px;
       }
 
-      .intro {
-        max-width: 100%;
-        padding: 20px;
+      .intro, .profile-image {
+        width: 100%;
         text-align: center;
       }
 
-      .profile-image {
-        margin-top: 20px;
-        justify-content: center;
+      .intro h1, .intro h2 {
+        font-size: 1.8rem;
       }
 
       .profile-image img {
         width: 180px;
-      }
-
-      .intro h1 {
-        font-size: 2rem;
-      }
-
-      .intro h2 {
-        font-size: 1.3rem;
-      }
-
-      .intro p {
-        font-size: 0.95rem;
-      }
-
-      .hire-btn {
-        padding: 10px 18px;
-        font-size: 0.95rem;
+        margin-top: 20px;
       }
     }
   </style>
@@ -203,10 +183,10 @@
     <nav class="sidebar">
       <h2>Menu</h2>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="active"><i class="icon-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="icon-user"></i> About</a></li>
+        <li><a href="certifications.html"><i class="icon-certificate"></i> Certifications</a></li>
+        <li><a href="contact.html"><i class="icon-contact"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -221,7 +201,7 @@
         <a href="contact.html" class="hire-btn">Hire Me</a>
       </div>
       <div class="profile-image">
-        <img src="profile.jpg" alt="Profile Picture" />
+        <img src="profile.jpg" alt="Portrait of Digumarthi Srilikhitha">
       </div>
     </section>
   </div>
