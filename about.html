@@ -207,6 +207,9 @@
     document.getElementById('menuToggle').addEventListener('click', function() {
       const navMenu = document.getElementById('navMenu');
       navMenu.classList.toggle('show');
+      
+      // Change icon based on menu state
+      this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
     });
   </script>
 </body>
