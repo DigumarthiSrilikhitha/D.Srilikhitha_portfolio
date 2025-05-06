@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digumarthi Srilikhitha | Portfolio</title>
   <meta name="description" content="Portfolio of Digumarthi Srilikhitha, aspiring Machine Learning Developer with expertise in Python, AI, and Web Development.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    /* Base Styles */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
       background-color: #f4f4f9;
+      line-height: 1.6;
     }
 
     .highlight {
@@ -19,19 +21,22 @@
       font-weight: bold;
     }
 
+    /* Container Layout */
     .container {
       display: flex;
       flex-direction: row;
+      min-height: 100vh;
     }
 
+    /* Sidebar Styles */
     .sidebar {
       width: 260px;
       background: linear-gradient(45deg, #212529, #ff5252);
       color: #fff;
       padding: 20px;
-      height: 100vh;
       box-sizing: border-box;
       flex-shrink: 0;
+      position: relative;
     }
 
     .sidebar h2 {
@@ -40,7 +45,7 @@
       margin-bottom: 30px;
       border-bottom: 2px solid #ff5252;
       padding-bottom: 10px;
-      color: #000;
+      color: #fff;
     }
 
     .sidebar ul {
@@ -63,17 +68,19 @@
       transition: background 0.3s, color 0.3s;
     }
 
+    .sidebar ul li a i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
     .sidebar ul li a:hover,
     .sidebar ul li a.active {
       background: #ff5252;
       color: #fff;
     }
 
-    .content {
-      flex-grow: 1;
-      padding: 40px 30px;
-    }
-
+    /* Main Content Styles */
     .home {
       display: flex;
       flex: 1;
@@ -87,6 +94,7 @@
 
     .intro {
       flex: 2;
+      min-width: 300px;
       max-width: 600px;
       background: #fff;
       padding: 30px;
@@ -98,18 +106,20 @@
       font-size: 2.5rem;
       color: #343a40;
       margin-bottom: 10px;
+      line-height: 1.2;
     }
 
     .intro h2 {
       font-size: 1.8rem;
       color: #ff5252;
       margin-bottom: 20px;
+      line-height: 1.3;
     }
 
     .intro p {
       font-size: 1rem;
       color: #6c757d;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 20px;
     }
 
@@ -123,6 +133,7 @@
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s;
+      cursor: pointer;
     }
 
     .hire-btn:hover {
@@ -134,16 +145,31 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      min-width: 250px;
     }
 
     .profile-image img {
-      width: 250px;
+      max-width: 100%;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* ✅ Responsive Design */
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -151,28 +177,82 @@
 
       .sidebar {
         width: 100%;
-        height: auto;
-        position: relative;
         padding: 15px;
+        position: relative;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      .sidebar ul {
+        display: none;
+      }
+
+      .sidebar ul.show {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: block;
       }
 
       .home {
+        padding: 30px 20px;
         flex-direction: column;
-        padding: 20px;
+        gap: 20px;
       }
 
-      .intro, .profile-image {
-        width: 100%;
+      .intro {
+        order: 2;
+        padding: 20px;
         text-align: center;
       }
 
-      .intro h1, .intro h2 {
+      .intro h1 {
+        font-size: 2rem;
+      }
+
+      .intro h2 {
+        font-size: 1.5rem;
+      }
+
+      .profile-image {
+        order: 1;
+        margin-bottom: 20px;
+      }
+
+      .profile-image img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .intro h1 {
         font-size: 1.8rem;
+      }
+
+      .intro h2 {
+        font-size: 1.3rem;
+      }
+
+      .intro p {
+        font-size: 0.9rem;
+      }
+
+      .hire-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
       }
 
       .profile-image img {
         width: 180px;
-        margin-top: 20px;
+        height: 180px;
       }
     }
   </style>
@@ -181,17 +261,21 @@
   <div class="container">
     <!-- Sidebar -->
     <nav class="sidebar">
+      <button class="menu-toggle" id="menuToggle">☰</button>
       <h2>Menu</h2>
-      <ul>
-        <li><a href="index.html" class="active"><i class="icon-home"></i> Home</a></li>
-        <li><a href="about.html"><i class="icon-user"></i> About</a></li>
-        <li><a href="certifications.html"><i class="icon-certificate"></i> Certifications</a></li>
-        <li><a href="contact.html"><i class="icon-contact"></i> Contact</a></li>
+      <ul id="navMenu">
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
 
     <!-- Main Content -->
     <section class="home">
+      <div class="profile-image">
+        <img src="profile.jpg" alt="Portrait of Digumarthi Srilikhitha">
+      </div>
       <div class="intro">
         <h1>Hello, I'm <span class="highlight">Digumarthi Srilikhitha</span></h1>
         <h2>An <span class="highlight">Aspiring Machine Learning Developer</span></h2>
@@ -200,10 +284,18 @@
         </p>
         <a href="contact.html" class="hire-btn">Hire Me</a>
       </div>
-      <div class="profile-image">
-        <img src="profile.jpg" alt="Portrait of Digumarthi Srilikhitha">
-      </div>
     </section>
   </div>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('show');
+      
+      // Change icon based on menu state
+      this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+    });
+  </script>
 </body>
 </html>
