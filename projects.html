@@ -4,58 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Digumarthi Srilikhitha</title>
-  <link rel="stylesheet" href="css/styleprojects.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: #f8f9fa;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
       display: flex;
+      flex-direction: row;
       min-height: 100vh;
     }
 
-    /* Container */
-.container {
-  display: flex;
-}
+    /* Sidebar Styles - Consistent with other pages */
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(45deg, #212529, #ff5252);
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+      flex-shrink: 0;
+      z-index: 10;
+    }
 
-/* Sidebar Styles - Adjusted */
-.sidebar {
-  width: 260px;
-  background: linear-gradient(45deg, #212529, #ff5252);
-  color: #fff;
-  padding: 20px;
-  height: 100vh;
-  box-sizing: border-box;
-  position: relative; /* No longer fixed */
-  flex-shrink: 0; /* Prevents sidebar from shrinking */
-}
+    .sidebar h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #ff5252;
+      padding-bottom: 10px;
+      color: #fff;
+    }
 
-.sidebar h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #ff5252;
-  padding-bottom: 10px;
-  color: #000; /* Menu title in black */
-}
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .sidebar ul li {
+      margin: 12px 0;
+    }
 
-.sidebar ul li {
-  margin: 12px 0;
-}
-
-.sidebar ul li a {
+    .sidebar ul li a {
       color: #fff;
       text-decoration: none;
       font-size: 1.1rem;
@@ -65,69 +66,34 @@
       transition: background 0.3s, color 0.3s;
     }
 
-.sidebar ul li a:hover,
+    .sidebar ul li a:hover,
     .sidebar ul li a.active {
       background: #ff5252;
       color: #fff;
     }
 
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
 
-/* Main Content Styles */
-.content {
-  flex-grow: 1;
-  padding: 40px 30px;
-}
+    /* Main Content Styles */
+    .content {
+      flex-grow: 1;
+      padding: 40px 30px;
+      background-color: #f0f4ff;
+    }
 
-/* Page Heading */
-h1 {
-  font-size: 2.2rem;
-  color: #d32f2f;
-  margin-bottom: 25px;
-  font-weight: 600;
-}
-
-/* Skills Section */
-.skills-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Each Skill Category Card */
-.skill-category {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  flex: 1 1 calc(33.33% - 20px);
-  min-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.skill-category h2 {
-  color: #333;
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.skill-category ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin: 0;
-}
-
-.skill-category ul li {
-  color: #555;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-}
-
-
+    /* Page Heading - Consistent with other pages */
     h1 {
       font-size: 2.5rem;
       margin-bottom: 30px;
@@ -140,41 +106,49 @@ h1 {
     /* Projects Grid */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
     }
 
-    /* Project Card */
+    /* Project Card - Enhanced */
     .project-card {
       background: #fff;
       border-left: 5px solid #ff5252;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     }
 
     .project-card h2 {
-      margin-top: 0;
+      margin: 0 0 15px 0;
       font-size: 1.4rem;
       color: #343a40;
+      line-height: 1.3;
     }
 
     .project-card p {
       color: #6c757d;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      flex-grow: 1;
+      line-height: 1.6;
     }
 
     .project-card a {
+      display: inline-block;
       color: #007bff;
       font-weight: 600;
       text-decoration: none;
       transition: color 0.3s ease;
+      margin-top: auto;
     }
 
     .project-card a:hover {
@@ -182,38 +156,83 @@ h1 {
       text-decoration: underline;
     }
 
-    @media screen and (max-width: 768px) {
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .container {
+        flex-direction: column;
+      }
+
       .sidebar {
-        position: relative;
         width: 100%;
-        height: auto;
+        padding: 15px;
+      }
+
+      .sidebar h2 {
+        text-align: left;
+        padding-left: 10px;
+        margin-bottom: 15px;
+      }
+
+      .sidebar ul {
+        display: none;
+      }
+
+      .sidebar ul.show {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: block;
       }
 
       .content {
-        margin-left: 0;
-        padding: 20px;
+        padding: 30px 20px;
       }
 
       h1 {
         font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+
+      .project-card h2 {
+        font-size: 1.3rem;
+      }
+
+      .project-card p {
+        font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar -->
+    <!-- Sidebar - Consistent with other pages -->
     <nav class="sidebar">
+      <button class="menu-toggle" id="menuToggle">☰</button>
       <h2>Menu</h2>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="resume.html">Resume</a></li>
+      <ul id="navMenu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="projects.html" class="active"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
       </ul>
     </nav>
 
@@ -234,10 +253,10 @@ h1 {
         </div>
 
         <div class="project-card">
-  <h2>Countdown to Birthday</h2>
-  <p>A responsive React.js web app that shows a real-time countdown to your next birthday. Built with Vite for performance and styled using Tailwind CSS.</p>
-  <a href="https://github.com/DigumarthiSrilikhitha/Counting_to_birthday" target="_blank">View on GitHub</a>
-      </div>
+          <h2>Countdown to Birthday</h2>
+          <p>A responsive React.js web app that shows a real-time countdown to your next birthday. Built with Vite for performance and styled using Tailwind CSS.</p>
+          <a href="https://github.com/DigumarthiSrilikhitha/Counting_to_birthday" target="_blank">View on GitHub</a>
+        </div>
 
         <div class="project-card">
           <h2>Disease Prediction Using Machine Learning</h2>
@@ -277,5 +296,16 @@ h1 {
       </div>
     </section>
   </div>
+
+  <script>
+    // Mobile menu toggle functionality - Consistent with other pages
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('show');
+      
+      // Change icon based on menu state
+      this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+    });
+  </script>
 </body>
 </html>
