@@ -3,55 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <title>Education | Digumarthi Srilikhitha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
     }
 
-    /* Container */
-/* Container */
-.container {
-  display: flex;
-}
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
 
-/* Sidebar Styles - Adjusted */
-.sidebar {
-  width: 260px;
-  background: linear-gradient(45deg, #212529, #ff5252);
-  color: #fff;
-  padding: 20px;
-  height: 100vh;
-  box-sizing: border-box;
-  position: relative; /* No longer fixed */
-  flex-shrink: 0; /* Prevents sidebar from shrinking */
-}
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
 
-.sidebar h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #ff5252;
-  padding-bottom: 10px;
-  color: #000; /* Menu title in black */
-}
+    /* Sidebar Styles - Consistent with other pages */
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(45deg, #212529, #ff5252);
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+      flex-shrink: 0;
+      z-index: 10;
+    }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .sidebar h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #ff5252;
+      padding-bottom: 10px;
+      color: #fff;
+    }
 
-.sidebar ul li {
-  margin: 12px 0;
-}
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-.sidebar ul li a {
+    .sidebar ul li {
+      margin: 12px 0;
+    }
+
+    .sidebar ul li a {
       color: #fff;
       text-decoration: none;
       font-size: 1.1rem;
@@ -61,119 +66,44 @@
       transition: background 0.3s, color 0.3s;
     }
 
-.sidebar ul li a:hover,
+    .sidebar ul li a:hover,
     .sidebar ul li a.active {
       background: #ff5252;
       color: #fff;
     }
 
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
 
-/* Main Content Styles */
-.content {
-  flex-grow: 1;
-  padding: 40px 30px;
-}
+    /* Main Content Styles */
+    .content {
+      flex-grow: 1;
+      padding: 40px 30px;
+      background-color: #f0f4ff;
+    }
 
-/* Page Heading */
-h1 {
-  font-size: 2.2rem;
-  color: #d32f2f;
-  margin-bottom: 25px;
-  font-weight: 600;
-}
+    /* Page Heading - Consistent with other pages */
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #212529;
+      border-bottom: 3px solid #ff5252;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
 
-/* Skills Section */
-.skills-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Each Skill Category Card */
-.skill-category {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  flex: 1 1 calc(33.33% - 20px);
-  min-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.skill-category h2 {
-  color: #333;
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.skill-category ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin: 0;
-}
-
-.skill-category ul li {
-  color: #555;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-}
-
-/* Page Heading */
-h1 {
-  font-size: 2.2rem;
-  color: #d32f2f;
-  margin-bottom: 25px;
-  font-weight: 600;
-}
-
-/* Skills Section */
-.skills-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Each Skill Category Card */
-.skill-category {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  flex: 1 1 calc(33.33% - 20px);
-  min-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.skill-category h2 {
-  color: #333;
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.skill-category ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin: 0;
-}
-
-.skill-category ul li {
-  color: #555;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-}
-
-
-    /* Timeline Styles */
+    /* Timeline Styles - Enhanced */
     .timeline {
       display: flex;
       flex-direction: column;
@@ -182,65 +112,126 @@ h1 {
 
     .timeline-item {
       background: white;
-      border-left: 4px solid #ff5252;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #ff5252;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
     }
 
     .timeline-item h2 {
-      color: #2c3e50;
-      margin: 0 0 10px;
-      font-size: 1.3rem;
+      color: #343a40;
+      margin: 0 0 15px 0;
+      font-size: 1.4rem;
+      line-height: 1.3;
     }
 
     .timeline-item p {
       color: #6c757d;
       margin: 0;
       font-size: 1rem;
+      line-height: 1.6;
     }
 
     .timeline-item .year {
       position: absolute;
-      right: 20px;
-      top: 20px;
-      background-color: #d32f2f;
+      right: 25px;
+      top: 25px;
+      background-color: #ff5252;
       color: white;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.9rem;
+      font-weight: 600;
     }
 
-    @media (max-width: 768px) {
+    /* Responsive Design */
+    @media (max-width: 992px) {
       .container {
         flex-direction: column;
       }
+
       .sidebar {
         width: 100%;
-        height: auto;
-        border-bottom: 4px solid #ff5252;
+        padding: 15px;
+      }
+
+      .sidebar h2 {
+        text-align: left;
+        padding-left: 10px;
+        margin-bottom: 15px;
+      }
+
+      .sidebar ul {
+        display: none;
+      }
+
+      .sidebar ul.show {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .content {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .timeline-item {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .timeline-item h2 {
+        font-size: 1.3rem;
+      }
+
+      .timeline-item p {
+        font-size: 0.95rem;
+      }
+
+      .timeline-item .year {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar -->
-   <nav class="sidebar">
-  <button class="menu-toggle" id="menuToggle">☰</button>
-  <h2>Menu</h2>
-  <ul id="navMenu">
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
-    <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
-    <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
-    <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
-    <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
-    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-    <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
-  </ul>
-</nav>
+    <!-- Sidebar - Consistent with other pages -->
+    <nav class="sidebar">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <h2>Menu</h2>
+      <ul id="navMenu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="education.html" class="active"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+      </ul>
+    </nav>
 
     <!-- Main Content -->
     <section class="content">
@@ -265,8 +256,8 @@ h1 {
     </section>
   </div>
 
-    <script>
-    // Mobile menu toggle functionality
+  <script>
+    // Mobile menu toggle functionality - Consistent with other pages
     document.getElementById('menuToggle').addEventListener('click', function() {
       const navMenu = document.getElementById('navMenu');
       navMenu.classList.toggle('show');
@@ -275,6 +266,5 @@ h1 {
       this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
     });
   </script>
-  
 </body>
 </html>
