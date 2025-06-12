@@ -255,6 +255,74 @@
         height: 180px;
       }
     }
+    
+    #chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2b7de9;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+#chat-toggle:hover {
+  background: #1f64c5;
+}
+
+#chat-box {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#chat-header {
+  background: #2b7de9;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#chat-content {
+  padding: 10px;
+  height: 240px;
+  overflow-y: auto;
+  background: #f7f9fc;
+  font-size: 14px;
+  color: #333;
+}
+
+#chat-content div {
+  margin-bottom: 10px;
+}
+
+#chat-input {
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  outline: none;
+  box-sizing: border-box;
+}
+
   </style>
 </head>
 <body>
@@ -265,11 +333,14 @@
       <h2>Menu</h2>
       <ul id="navMenu">
         <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="about.html" onmouseover="showPreview('about')" onmouseout="hidePreview()"><i class="fas fa-user"></i> About</a></li>
+       <li><a href="certifications.html" onmouseover="showPreview('cert')" onmouseout="hidePreview()"><i class="fas fa-certificate"></i> Certifications</a></li>
+       <li><a href="contact.html" onmouseover="showPreview('contact')" onmouseout="hidePreview()"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
+    <!-- Preview Box on Hover -->
+<div id="hover-preview" style="display:none; position: absolute; left: 270px; top: 100px; width: 280px; background: #fff; color: #333; padding: 15px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 999; font-size: 14px; line-height: 1.5;"></div>
+
 
     <!-- Main Content -->
     <section class="home">
@@ -291,6 +362,16 @@
       </div>
     </section>
   </div>
+  <!-- Chat Button -->
+<div id="chat-toggle" onclick="toggleChat()">💬 Chat with me</div>
+
+<!-- Chat Box -->
+<div id="chat-box">
+  <div id="chat-header">Srilikhitha Chat Assistant</div>
+  <div id="chat-content"></div>
+  <input type="text" id="chat-input" placeholder="Ask a question..." onkeydown="handleEnter(event)">
+</div>
+
 
   <script>
     // Mobile menu toggle functionality
@@ -301,6 +382,93 @@
       // Change icon based on menu state
       this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
     });
+</script>
+    <script src="recruiterQA.js"></script>
+<script>
+    function toggleChat() {
+  const chatBox = document.getElementById('chat-box');
+  chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+}
+
+function handleEnter(event) {
+  if (event.key === 'Enter') {
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    if (message) {
+      appendMessage('You', message);
+      const reply = getBotResponse(message);
+      setTimeout(() => appendMessage('Bot', reply), 500);
+      input.value = '';
+    }
+  }
+}
+
+function appendMessage(sender, text) {
+  const chatContent = document.getElementById('chat-content');
+  const msg = document.createElement('div');
+  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+  chatContent.appendChild(msg);
+  chatContent.scrollTop = chatContent.scrollHeight;
+}
+
+function getBotResponse(userInput) {
+  const lowerInput = userInput.toLowerCase();
+
+  // Keyword mapping to recruiterQA keys
+  const keywordMap = {
+    "yourself": "Tell me about yourself",
+    "skills": "What are your key skills",
+    "project": "Tell me about your projects",
+    "final year": "What is your final year project",
+    "certification": "Any certifications or online courses",
+    "course": "Any certifications or online courses",
+    "experience": "What experience do you have",
+    "resume": "Can I download your resume",
+    "cv": "Can I download your resume",
+    "contact": "How can I contact you",
+    "email": "How can I contact you",
+    "linkedin": "How can I contact you",
+    "award": "What awards or achievements do you have",
+    "achievement": "What awards or achievements do you have"
+  };
+
+  // Loop through keywordMap and match
+  for (let keyword in keywordMap) {
+    if (lowerInput.includes(keyword)) {
+      return recruiterQA[keywordMap[keyword]];
+    }
+  }
+
+  return "I'm here to answer questions about Srilikhitha. Please ask something like 'skills', 'projects', or 'resume'.";
+}
+ function showPreview(section) {
+    const preview = document.getElementById('hover-preview');
+    let content = '';
+    
+    switch (section) {
+      case 'about':
+        content = `<strong>About Me</strong><br>B.Tech AI & ML student. Skilled in Python, ML, NLP, and web development. Strong communicator and leader.`;
+        break;
+      case 'cert':
+        content = `<strong>Certifications</strong><br>Completed courses in Python, Machine Learning, and AI from reputed platforms like Coursera, Udemy, and NPTEL.`;
+        break;
+      case 'contact':
+        content = `<strong>Contact</strong><br>Email, LinkedIn, and contact form available for queries and collaborations.`;
+        break;
+      default:
+        content = '';
+    }
+
+    if (content) {
+      preview.innerHTML = content;
+      preview.style.display = 'block';
+    }
+  }
+
+  function hidePreview() {
+    document.getElementById('hover-preview').style.display = 'none';
+  }
   </script>
+
 </body>
 </html>
