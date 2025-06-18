@@ -445,25 +445,6 @@ function getBotResponse(userInput) {
     const preview = document.getElementById('hover-preview');
     let content = '';
     
-    switch (section) {
-      case 'about':
-        content = `<strong>About Me</strong><br>B.Tech AI & ML student. Skilled in Python, ML, NLP, and web development. Strong communicator and leader.`;
-        break;
-      case 'cert':
-        content = `<strong>Certifications</strong><br>Completed courses in Python, Machine Learning, and AI from reputed platforms like Coursera, Udemy, and NPTEL.`;
-        break;
-      case 'contact':
-        content = `<strong>Contact</strong><br>Email, LinkedIn, and contact form available for queries and collaborations.`;
-        break;
-      default:
-        content = '';
-    }
-
-    if (content) {
-      preview.innerHTML = content;
-      preview.style.display = 'block';
-    }
-  }
 
   function hidePreview() {
     document.getElementById('hover-preview').style.display = 'none';
