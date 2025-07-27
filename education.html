@@ -265,11 +265,13 @@
 
   <!-- JS to toggle menu (for mobile view) -->
   <script>
-    const toggleBtn = document.querySelector('.menu-toggle');
-    const menuList = document.getElementById('menuList');
-
-    toggleBtn.addEventListener('click', () => {
-      menuList.classList.toggle('show');
+    // Mobile menu toggle functionality
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('show');
+      
+      // Change icon based on menu state
+      this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
     });
   </script>
 </body>
