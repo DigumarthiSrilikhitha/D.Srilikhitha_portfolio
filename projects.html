@@ -216,6 +216,45 @@
         font-size: 0.95rem;
       }
     }
+    /* Project Image Styles */
+    .project-image-container {
+      width: 100%; /* Ensure container takes full width of card */
+      height: 200px; /* Fixed height for consistent shape */
+      overflow: hidden; /* Hide overflowing parts of the image */
+      border-radius: 4px; /* Slightly rounded corners for the image container */
+      margin-top: 15px; /* Space above the image */
+      margin-bottom: 15px; /* Space below the image */
+      display: flex; /* Use flexbox to center the image */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      background-color: #e9ecef; /* Placeholder background if image is slow to load */
+    }
+
+    .project-image-container img {
+      width: 100%; /* Make image fill the width of its container */
+      height: 100%; /* Make image fill the height of its container */
+      object-fit: cover; /* Crop the image to cover the container while maintaining aspect ratio */
+      display: block; /* Remove extra space below the image */
+      cursor: pointer; /* Indicate it's clickable */
+      transition: transform 0.3s ease; /* Smooth hover effect */
+    }
+
+    .project-image-container img:hover {
+      transform: scale(1.05); /* Slightly enlarge image on hover */
+    }
+
+    /* Add or modify responsive image styles as well */
+    @media (max-width: 992px) {
+      .project-image-container {
+        height: 180px; /* Adjust height for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-image-container {
+        height: 150px; /* Further adjust height for very small screens */
+      }
+    }
   </style>
 </head>
 <body>
@@ -250,7 +289,11 @@
   <h2>Chatbot using NLP</h2>
   <p>I developed a conversational chatbot using TF-IDF vectorization and Logistic Regression for intent classification, with a Streamlit web app for interactive deployment. This project enhanced my understanding of NLP pipelines, machine learning-based text classification, and user interface development. I also implemented conversation logging and session-based interaction, showcasing my ability to build end-to-end ML applications with real-time user interaction.</p>
   <a href="https://github.com/DigumarthiSrilikhitha/edunet_Internship_project" target="_blank">View on GitHub</a>
-  <img src="chatbotai.png" alt="description" width="300" height="200">
+  <div class="project-image-container">
+  <a href="chatbotai.png" target="_blank">
+  <img src="chatbotai.png" alt="Screenshot of Chatbot AI" />
+            </a>
+  </div>
 </div>
 
 <div class="project-card">
