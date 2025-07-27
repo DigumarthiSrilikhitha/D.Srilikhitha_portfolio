@@ -322,6 +322,22 @@
   outline: none;
   box-sizing: border-box;
 }
+.sidebar-image {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: #fff;
+}
 
   </style>
 </head>
@@ -337,7 +353,14 @@
        <li><a href="certifications.html" onmouseover="showPreview('cert')" onmouseout="hidePreview()"><i class="fas fa-certificate"></i> Certifications</a></li>
        <li><a href="contact.html" onmouseover="showPreview('contact')" onmouseout="hidePreview()"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
+ <div class="sidebar-image">
+  <img src="girl.png" alt="Cute Lady Illustration" />
+</div>
+
+      
     </nav>
+
+    
     <!-- Preview Box on Hover -->
 <div id="hover-preview" style="display:none; position: absolute; left: 270px; top: 100px; width: 280px; background: #fff; color: #333; padding: 15px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 999; font-size: 14px; line-height: 1.5;"></div>
 
