@@ -6,6 +6,8 @@
   <title>Experience | Digumarthi Srilikhitha</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
+    /* === Your existing CSS from Education page, unchanged === */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -153,7 +155,7 @@
       font-size: 0.9rem;
       font-weight: 600;
     }
- <!--
+
     @media (max-width: 992px) {
       .container {
         flex-direction: column;
@@ -195,67 +197,7 @@
         padding: 20px;
       }
     }
--->
-     /* Responsive Design */
-    @media (max-width: 992px) {
-      .container {
-        flex-direction: column;
-      }
 
-      .sidebar {
-        width: 100%;
-        padding: 15px;
-      }
-
-      .sidebar h2 {
-        text-align: left;
-        padding-left: 10px;
-        margin-bottom: 15px;
-      }
-
-      .sidebar ul {
-        display: none;
-      }
-
-      .sidebar ul.show {
-        display: block;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .content {
-        padding: 30px 20px;
-      }
-
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-
-      .skills-section {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .skill-category {
-        padding: 20px;
-      }
-
-      .skill-category h2 {
-        font-size: 1.3rem;
-      }
-
-      .skill-category ul li {
-        font-size: 0.95rem;
-      }
-    }   <!-- 
     @media (max-width: 480px) {
       h1 {
         font-size: 1.8rem;
@@ -274,139 +216,6 @@
         position: static;
         display: inline-block;
         margin-top: 10px;
-      }
-    }   --> 
-
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      padding: 10px;
-      position: absolute;
-      right: 15px;
-      top: 15px;
-    }
-
-    /* Main Content Styles */
-    .content {
-      flex-grow: 1;
-      padding: 40px 30px;
-      background-color: #f0f4ff;
-    }
-
-    /* Page Heading */
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: #212529;
-      border-bottom: 3px solid #ff5252;
-      display: inline-block;
-      padding-bottom: 10px;
-    }
-
-    /* Experience Section */
-    .experience-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .experience-card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      flex: 1 1 calc(50% - 20px);
-      min-width: 280px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .experience-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-    }
-
-    .experience-card h2 {
-      color: #333;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .experience-card p {
-      color: #555;
-      font-size: 1rem;
-      margin: 8px 0;
-      line-height: 1.5;
-    }
-
-    .experience-card strong {
-      color: #333;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .container {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        padding: 15px;
-      }
-
-      .sidebar h2 {
-        text-align: left;
-        padding-left: 10px;
-        margin-bottom: 15px;
-      }
-
-      .sidebar ul {
-        display: none;
-      }
-
-      .sidebar ul.show {
-        display: block;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .content {
-        padding: 30px 20px;
-      }
-
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-
-      .experience-section {
-        flex-direction: column;
-      }
-
-      .experience-card {
-        flex: 1 1 100%;
-        padding: 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .experience-card h2 {
-        font-size: 1.3rem;
-      }
-
-      .experience-card p {
-        font-size: 0.95rem;
       }
     }
   </style>
@@ -432,63 +241,73 @@
     <!-- Main Content -->
     <section class="content">
       <h1>Experience</h1>
-      <div class="experience-section">
+      <div class="timeline">
 
-  <div class="experience-card">
-    <h2>AI/ML Intern</h2>
-    <p><strong>Organization:</strong> Taras Systems and Solutions (Remote)</p>
-    <p>
-      Completed a 5-month internship focused on real-world AI, NLP, and computer vision projects.  
-      I developed a sentiment analysis chatbot, analyzed WhatsApp chat data, and implemented heart disease prediction using Python and Streamlit.  
-      Additionally, I worked on a hotel registration portal and a hand-gesture-based calculator.  
-      This experience sharpened my hands-on skills in ML, data visualization, and AI deployment.
-    </p>
-  </div>
+        <!-- Internship 1 -->
+         <div class="timeline-item">
+          <h2>Artificial Intelligence and Machine Learning Intern</h2>
+          <p><strong>Taras Systems and Solutions (Remote)</strong></p>
+          <span class="year">December 2024 – Present</span>
+          <p>
+            Working on practical machine learning projects including WhatsApp chat analysis and heart disease prediction, strengthening skills in data preprocessing, modeling, and deployment.
+          </p>
+          <ul>
+            <li>Implemented ML algorithms using Python and Streamlit for interactive data visualization and analysis.</li>
+            <li>Performed data preprocessing, feature engineering, and model evaluation for real-world datasets.</li>
+            <li>Collaborated remotely to deliver AI solutions focusing on healthcare and communication data.</li>
+          </ul>
+          <p><strong>Skills & Tools:</strong> Python, Machine Learning, Data Preprocessing, Streamlit, Model Deployment, Data Visualization</p>
+        </div>
 
-  <div class="experience-card">
-    <h2>AI Intern</h2>
-    <p><strong>Organization:</strong> TechSaksham (AICTE & Edunet Foundation)</p>
-    <p>
-      Built and deployed an AI-powered chatbot using Logistic Regression and TF-IDF vectorizer with Python, NLTK, and Streamlit.  
-      Focused on Natural Language Processing (NLP) and Machine Learning (ML) techniques for real-world applications.  
-      Gained practical experience in text preprocessing, training ML models, and building interactive UIs.
-    </p>
-  </div>
+          <!-- Internship 2 -->
+         <div class="timeline-item">
+          <h2>AI Internship Program</h2>
+          <p><strong>TechSaksham (AICTE, Edunet Foundation)</strong></p>
+          <span class="year">November – December 2024</span>
+          <p>
+            Developed and deployed an AI-powered chatbot leveraging NLP and ML techniques to accurately interpret and respond to user queries.
+          </p>
+          <ul>
+            <li>Implemented Logistic Regression and TF-IDF vectorization for intent classification.</li>
+            <li>Used Python libraries such as NLTK, Scikit-learn, Flask, and Streamlit for building and deploying the chatbot.</li>
+            <li>Focused on Natural Language Processing techniques and real-world AI application development.</li>
+          </ul>
+          <p><strong>Skills & Tools:</strong> Python, NLP, Machine Learning, Logistic Regression, TF-IDF, NLTK, Scikit-learn, Flask, Streamlit</p>
+        </div>
 
-  <div class="experience-card">
-    <h2>Web Development Intern</h2>
-    <p><strong>Organization:</strong> VaultofCodes (Remote)</p>
-    <p>
-      Completed a one-month internship where I developed a personal portfolio and a dynamic to-do list app.  
-      Strengthened my front-end skills using HTML, CSS, and JavaScript.  
-      Took initiative in learning UI/UX concepts and implemented them independently in responsive web projects.
-    </p>
-  </div>
+        <!-- Internship 3 -->
+        <div class="timeline-item">
+          <h2>Smart Factory Automation Using IoT Intern</h2>
+          <p><strong>Siemens, NIT Warangal (In-Person)</strong></p>
+          <span class="year">April – May 2024</span>
+          <p>
+            Explored and applied various IoT tools and technologies in automation and smart factory environments. Focused on integrating AI concepts in robotics and industrial automation through hands-on projects.
+          </p>
+          <ul>
+            <li>Worked extensively with IoT devices and platforms to create real-time automation solutions.</li>
+            <li>Applied AI algorithms to enhance robotics control and factory automation processes.</li>
+            <li>Gained practical experience in deploying smart factory concepts through lab sessions and projects.</li>
+          </ul>
+          <p><strong>Skills & Tools:</strong> IoT Platforms, AI integration, Robotics, Industrial Automation, Sensors, Embedded Systems</p>
+        </div>
+    
+        <!-- Internship 4 -->
+        <div class="timeline-item">
+          <h2>Web Development Intern</h2>
+          <p><strong>VaultofCodes (Virtual)</strong></p>
+          <span class="year">Date Not Specified</span>
+          <p>
+            Gained hands-on experience in front-end development by building projects such as portfolios and to-do list web applications.
+          </p>
+          <ul>
+            <li>Enhanced skills in JavaScript and CSS through project development.</li>
+            <li>Implemented responsive and user-friendly web interfaces.</li>
+            <li>Collaborated in a virtual environment to deliver project milestones.</li>
+          </ul>
+          <p><strong>Skills & Tools:</strong> JavaScript, CSS, HTML, Front-End Development</p>
+        </div>
 
-  <div class="experience-card">
-    <h2>Python Developer Intern</h2>
-    <p><strong>Organization:</strong> CodersCave (Remote)</p>
-    <p>
-      Developed full-stack mini projects including an Expense Sharing App and a Clock App using Python and Flask.  
-      This role deepened my understanding of server-side logic, HTML templating, and backend development practices.  
-      It helped me translate user needs into functional applications using Python.
-    </p>
-  </div>
-
-  <div class="experience-card">
-    <h2>Smart Factory System using IoT</h2>
-    <p><strong>Organization:</strong> Siemens, NIT Warangal</p>
-    <p>
-      As part of a hands-on internship, I developed a Smart Factory Automation System integrating real-time IoT solutions.  
-      Combined hardware elements like Arduino, IR sensors, and servo motors with cloud platforms like ThingSpeak to manage smart parking and factory automation.  
-      Gained experience in embedded systems, MQTT, real-time monitoring, and teamwork in an industrial setup.  
-      This internship helped me bridge the gap between AI, IoT, and automation in real-world applications.
-    </p>
-  </div>
-
-</div>
-
-  </div>
+      </div>
     </section>
   </div>
 
@@ -497,8 +316,6 @@
     document.getElementById('menuToggle').addEventListener('click', function() {
       const navMenu = document.getElementById('navMenu');
       navMenu.classList.toggle('show');
-      
-      // Change icon based on menu state
       this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
     });
   </script>
