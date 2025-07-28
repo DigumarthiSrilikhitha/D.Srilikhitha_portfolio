@@ -13,7 +13,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background-color: #f8f9fa;
       min-height: 100vh;
       line-height: 1.6;
@@ -25,7 +25,6 @@
       min-height: 100vh;
     }
 
-    /* Sidebar Styles - Enhanced */
     .sidebar {
       width: 260px;
       background: linear-gradient(45deg, #212529, #ff5252);
@@ -70,6 +69,152 @@
     .sidebar ul li a.active {
       background: #ff5252;
       color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 40px 30px;
+      background-color: #f0f4ff;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #212529;
+      border-bottom: 3px solid #ff5252;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .timeline-item {
+      background: white;
+      border-left: 5px solid #ff5252;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .timeline-item h2 {
+      color: #343a40;
+      margin: 0 0 15px 0;
+      font-size: 1.4rem;
+      line-height: 1.3;
+    }
+
+    .timeline-item p {
+      color: #6c757d;
+      margin: 0 0 10px 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .timeline-item ul {
+      color: #6c757d;
+      margin-left: 20px;
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .timeline-item .year {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      background-color: #ff5252;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 992px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .sidebar h2 {
+        text-align: left;
+        padding-left: 10px;
+        margin-bottom: 15px;
+      }
+
+      .sidebar ul {
+        display: none;
+      }
+
+      .sidebar ul.show {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .content {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .timeline-item {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .timeline-item h2 {
+        font-size: 1.3rem;
+      }
+
+      .timeline-item p,
+      .timeline-item ul {
+        font-size: 0.95rem;
+      }
+
+      .timeline-item .year {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+      }
     }
 
     /* Mobile Menu Toggle */
