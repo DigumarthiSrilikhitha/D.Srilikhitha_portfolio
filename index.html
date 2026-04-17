@@ -380,77 +380,127 @@
 
 
   <script>
-    // Mobile menu toggle functionality
-    document.getElementById('menuToggle').addEventListener('click', function() {
-      const navMenu = document.getElementById('navMenu');
-      navMenu.classList.toggle('show');
-      
-      // Change icon based on menu state
-      this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
-    });
-</script>
-    <script src="recruiterQA.js"></script>
-<script>
-    function toggleChat() {
-  const chatBox = document.getElementById('chat-box');
-  chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
-}
+  // ================= MENU TOGGLE =================
+  document.getElementById('menuToggle').addEventListener('click', function() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('show');
+    this.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+  });
 
-function handleEnter(event) {
-  if (event.key === 'Enter') {
-    const input = document.getElementById('chat-input');
-    const message = input.value.trim();
-    if (message) {
-      appendMessage('You', message);
-      const reply = getBotResponse(message);
-      setTimeout(() => appendMessage('Bot', reply), 500);
-      input.value = '';
-    }
-  }
-}
+  // ================= CHATBOT Q&A DATA =================
+  const recruiterQA = {
 
-function appendMessage(sender, text) {
-  const chatContent = document.getElementById('chat-content');
-  const msg = document.createElement('div');
-  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
-  chatContent.appendChild(msg);
-  chatContent.scrollTop = chatContent.scrollHeight;
-}
+    "Tell me about yourself":
+      "Hi, I’m Digumarthi Srilikhitha, a B.Tech graduate in Computer Science (AI & ML) with a CGPA of 8.39. I have hands-on experience in Python, Machine Learning, and backend development. I have worked on AI-based applications like chatbots, heart disease prediction, and WhatsApp chat analysis. Currently, I am working as an Associate Analyst at GlobalLogic, focusing on geospatial data and mapping technologies.",
 
-function getBotResponse(userInput) {
-  const lowerInput = userInput.toLowerCase();
+    "What are your key skills":
+      "My key skills include Python, SQL, JavaScript, HTML, CSS, and Java. I have experience with Machine Learning libraries such as TensorFlow, Keras, Scikit-learn, and OpenCV. I also work with tools like Git, GitHub, Jupyter Notebook, AWS, Flask, and Streamlit.",
 
-  // Keyword mapping to recruiterQA keys
-  const keywordMap = {
-    "yourself": "Tell me about yourself",
-    "skills": "What are your key skills",
-    "project": "Tell me about your projects",
-    "final year": "What is your final year project",
-    "certification": "Any certifications or online courses",
-    "course": "Any certifications or online courses",
-    "experience": "What experience do you have",
-    "resume": "Can I download your resume",
-    "cv": "Can I download your resume",
-    "contact": "How can I contact you",
-    "email": "How can I contact you",
-    "linkedin": "How can I contact you",
-    "award": "What awards or achievements do you have",
-    "achievement": "What awards or achievements do you have"
+    "Tell me about your projects":
+      "I have developed several projects including a Hotel Management Website with full backend integration, an NLP-based chatbot using machine learning, and a touchless mouse control system using hand gesture recognition with OpenCV, MediaPipe, and ResNet18. I have also built ML applications like heart disease prediction and WhatsApp chat analysis.",
+
+    "What is your final year project":
+      "My final year project is Touchless Mouse Control using Hand Gestures, where I implemented real-time gesture recognition using OpenCV, MediaPipe, and ResNet18 to perform actions like click, drag, and zoom without physical devices.",
+
+    "Any certifications or online courses":
+      "Yes, I have completed certifications in Generative AI, Machine Learning using Python, and cloud technologies from platforms like Coursera, Google Cloud, Infosys Springboard, NPTEL, and GUVI.",
+
+    "What experience do you have":
+      "I have worked as an AI & ML Intern at Taras Systems and Solutions, where I built machine learning applications and worked on data preprocessing and model evaluation. I also completed an AI internship under AICTE Edunet Foundation, where I developed an NLP-based chatbot. Currently, I am working as an Associate Analyst at GlobalLogic, handling OpenStreetMap data, satellite imagery analysis, and improving mapping accuracy.",
+
+    "Can I download your resume":
+      "Yes, you can download my resume from the portfolio website. Please check the resume section or feel free to contact me directly for it.",
+
+    "How can I contact you":
+      "You can contact me via email at digumarthisrilikhitha22@gmail.com or connect with me on LinkedIn. I am open to job opportunities and collaborations.",
+
+    "What awards or achievements do you have":
+      "I have successfully completed multiple internships in AI, Machine Learning, and IoT. I have also worked on impactful projects like gesture-based systems and AI chatbots, and completed certifications from reputed platforms like Coursera and Google Cloud.",
+
+    "Why should we hire you":
+      "I have a strong foundation in Python and Machine Learning along with hands-on project experience. I am a quick learner, adaptable, and capable of solving real-world problems. I am eager to contribute to the organization while continuously improving my skills.",
+
+    "What are your strengths":
+      "My strengths include problem-solving ability, adaptability, quick learning, and strong interest in backend development and AI technologies.",
+
+    "What are your career goals":
+      "My short-term goal is to start my career as a Python Developer or Data Analyst and gain strong industry experience. My long-term goal is to grow into a Machine Learning Engineer and work on impactful AI-driven solutions."
   };
 
-  // Loop through keywordMap and match
-  for (let keyword in keywordMap) {
-    if (lowerInput.includes(keyword)) {
-      return recruiterQA[keywordMap[keyword]];
+  // ================= CHAT TOGGLE =================
+  function toggleChat() {
+    const chatBox = document.getElementById('chat-box');
+    chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // ================= HANDLE ENTER =================
+  function handleEnter(event) {
+    if (event.key === 'Enter') {
+      const input = document.getElementById('chat-input');
+      const message = input.value.trim();
+      if (message) {
+        appendMessage('You', message);
+        const reply = getBotResponse(message);
+        setTimeout(() => appendMessage('Bot', reply), 500);
+        input.value = '';
+      }
     }
   }
 
-  return "I'm here to answer questions about Srilikhitha. Please ask something like 'skills', 'projects', or 'resume'.";
-}
- function showPreview(section) {
+  // ================= APPEND MESSAGE =================
+  function appendMessage(sender, text) {
+    const chatContent = document.getElementById('chat-content');
+    const msg = document.createElement('div');
+    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatContent.appendChild(msg);
+    chatContent.scrollTop = chatContent.scrollHeight;
+  }
+
+  // ================= BOT RESPONSE =================
+  function getBotResponse(userInput) {
+    const lowerInput = userInput.toLowerCase();
+
+    const keywordMap = {
+      "yourself": "Tell me about yourself",
+      "about": "Tell me about yourself",
+      "skills": "What are your key skills",
+      "python": "What are your key skills",
+      "ml": "What are your key skills",
+      "data": "What are your key skills",
+      "project": "Tell me about your projects",
+      "projects": "Tell me about your projects",
+      "final": "What is your final year project",
+      "fyp": "What is your final year project",
+      "certification": "Any certifications or online courses",
+      "course": "Any certifications or online courses",
+      "experience": "What experience do you have",
+      "internship": "What experience do you have",
+      "resume": "Can I download your resume",
+      "cv": "Can I download your resume",
+      "contact": "How can I contact you",
+      "email": "How can I contact you",
+      "linkedin": "How can I contact you",
+      "award": "What awards or achievements do you have",
+      "achievement": "What awards or achievements do you have",
+      "hire": "Why should we hire you",
+      "strength": "What are your strengths",
+      "goal": "What are your career goals",
+      "career": "What are your career goals"
+    };
+
+    for (let keyword in keywordMap) {
+      if (lowerInput.includes(keyword)) {
+        return recruiterQA[keywordMap[keyword]];
+      }
+    }
+
+    return "I can help you with information about Srilikhitha’s skills, projects, experience, or resume. Try asking something like 'skills', 'projects', or 'contact'.";
+  }
+
+  // ================= HOVER PREVIEW =================
+  function showPreview(section) {
     const preview = document.getElementById('hover-preview');
     let content = '';
-    
 
     if (content) {
       preview.innerHTML = content;
@@ -461,7 +511,7 @@ function getBotResponse(userInput) {
   function hidePreview() {
     document.getElementById('hover-preview').style.display = 'none';
   }
-  </script>
+        </script>
 
 </body>
 </html>
